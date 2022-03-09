@@ -5,6 +5,7 @@ const todoList = document.querySelector(".todo-list");
 
 //ECOUTEURS
 todoButton.addEventListener("click", addTodo);     //au clic sur button, appelle la fonction addTodo
+todoList.addEventListener("click", deleteCheck);
 
 //FONCTIONS
 function addTodo(event){
@@ -14,7 +15,7 @@ function addTodo(event){
     todoDiv.classList.add("todo");
     //Creation du li
     const newTodo = document.createElement("li");
-    newTodo.innerText = "Salut";
+    newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
     //bouton Check
@@ -29,4 +30,22 @@ function addTodo(event){
     todoDiv.appendChild(deleteButton);
     //AJOUTER TODO A TODOLIST
     todoList.appendChild(todoDiv);
+    todoInput.value = "";
+}
+
+function deleteCheck(e) {
+    const item = e.target;
+    //DELETE TODO
+    if (item.classList[0] === "delete-btn"){
+        const todo = item.parentElement;
+        todo.classList.add("fall");
+        todo.addEventListener("transitionend", function () {
+            todo.remove()
+        });
+    }
+    //CHECK TODO
+    if (item.classList[0] === "check-btn"){
+        const todo = item.parentElement;
+        todo.classList.toggle("check");
+    }
 }

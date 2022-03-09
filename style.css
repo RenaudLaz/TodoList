@@ -64,6 +64,11 @@ footer {
   padding-top: 50px;
 }
 
+.fas {
+  font-size: 1.5em;
+  pointer-events: none;
+}
+
 .todo {
   margin: 0.5em;
   background: white;
@@ -110,14 +115,25 @@ footer {
   padding: 1em;
   cursor: pointer;
   font-size: 0.6em;
-  color: white;
+  color: black;
 }
 
 .check-btn {
-  background: green;
+  background: #49cc49;
 }
 
 .delete-btn {
-  background: red;
+  background: #d10707;
+}
+
+.check {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  -webkit-transform: translateY(8em) rotateZ(20deg);
+          transform: translateY(8em) rotateZ(20deg);
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

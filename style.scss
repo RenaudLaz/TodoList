@@ -45,7 +45,10 @@ footer{
     width:100%;
     padding-top:50px;    
 }
-
+.fas{
+    font-size: 1.5em;
+    pointer-events: none;
+}
 .todo{
     margin: 0.5em;
     background: white;
@@ -73,11 +76,20 @@ footer{
     padding: 1em;
     cursor: pointer;
     font-size: 0.6em;
-    color: white;
+    color: black;
 }
 .check-btn{
-    background: green;
+    background: rgb(73, 204, 73);
 }
 .delete-btn{
-    background: red;
+    background: rgb(209, 7, 7);
+}
+.check {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall{
+    transform: translateY(8em) rotateZ(20deg);
+    opacity: 0;
 }
